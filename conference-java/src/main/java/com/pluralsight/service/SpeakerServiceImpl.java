@@ -7,18 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import javax.annotation.PostConstruct;
 
 @Service("speakerService")
 public class SpeakerServiceImpl implements SpeakerService {
 
+    @Autowired
     private SpeakerRepository repository;
-
 
     public SpeakerServiceImpl (){
         System.out.println("SpeakerServiceImpl no args constructor");
     }
 
-    @Autowired
+    @PostConstruct
+    private void initialize(){
+        System.out.println("We're called after the constructors");
+    }
+
 
     public SpeakerServiceImpl (SpeakerRepository speakerRepository){
         System.out.println("SpeakerServiceImpl repository constructor");
