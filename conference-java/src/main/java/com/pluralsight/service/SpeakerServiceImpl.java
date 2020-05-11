@@ -24,7 +24,6 @@ public class SpeakerServiceImpl implements SpeakerService {
         System.out.println("We're called after the constructors");
     }
 
-
     public SpeakerServiceImpl (SpeakerRepository speakerRepository){
         System.out.println("SpeakerServiceImpl repository constructor");
         this.repository = speakerRepository;
