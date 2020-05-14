@@ -16,18 +16,18 @@ public class SpeakersController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Speaker create(@RequestBody final Speaker speaker){
+    public Speaker create(@RequestBody final Speaker speaker) {
         return speakerRepository.saveAndFlush(speaker);
     }
 
     @GetMapping
-    public List<Speaker> list(){
+    public List<Speaker> list() {
         return speakerRepository.findAll();
     }
 
     @GetMapping
     @RequestMapping("{id}")
-    public Speaker get(@PathVariable Long id){
+    public Speaker get(@PathVariable Long id) {
         return speakerRepository.getOne(id);
     }
 }
