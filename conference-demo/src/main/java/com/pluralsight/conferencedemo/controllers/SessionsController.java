@@ -42,7 +42,7 @@ public class SessionsController {
     public Session update(@PathVariable Long id, @RequestBody Session session) {
         //TODO Add validation that all attributes are passed in, otherwise return 400 bad payload
         Session existingSession = sessionRepository.getOne(id);
-        //BeanUtils.copyProperties(session, existingSession, "session_id");
+        BeanUtils.copyProperties(session, existingSession, "session_id");
         return sessionRepository.saveAndFlush(existingSession);
     }
 }
