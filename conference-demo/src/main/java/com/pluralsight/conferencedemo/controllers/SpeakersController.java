@@ -41,7 +41,7 @@ public class SpeakersController {
     public Speaker update(@PathVariable Long id, @RequestBody Speaker speaker) {
         //TODO Add validation that all attributes are passed in, otherwise return 400 bad payload
         Speaker existingSpeaker = speakerRepository.getOne(id);
-        //BeanUtils.copyProperties(speaker, existingSpeaker, "speaker_id");
+        BeanUtils.copyProperties(speaker, existingSpeaker, "speaker_id");
         return speakerRepository.saveAndFlush(existingSpeaker);
     }
 }
