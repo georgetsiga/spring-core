@@ -7,7 +7,7 @@ import org.hibernate.annotations.Type;
 import java.util.List;
 import javax.persistence.*;
 
-@Entity(name="speakers")
+@Entity(name = "speakers")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Speaker {
     @Id
