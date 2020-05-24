@@ -12,7 +12,7 @@ public class ConferenceConfig implements WebMvcConfigurer {
 
     private String WEB_INF_PATH = "/WEB-INF/";
     private String JSP_PATH = WEB_INF_PATH + "jsp/";
-    private String PDF_RESOUCE_PATH = WEB_INF_PATH + "pdf/";
+    private String PDF_RESOURCE_PATH = WEB_INF_PATH + "pdf/";
     private String SUFFIX = ".jsp";
     private String FILES_WILD_CARD = "/files/**";
 
@@ -20,7 +20,7 @@ public class ConferenceConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler(FILES_WILD_CARD)
-                .addResourceLocations(PDF_RESOUCE_PATH);
+                .addResourceLocations(PDF_RESOURCE_PATH);
     }
 
     @Bean
